@@ -3,6 +3,7 @@
  *
  */
 package com.kfzteile.codingTask.EmailService.service;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +20,8 @@ public class MockMailSender {
 	private MailSenderService mailSender;
 
 	/**
-	 * Send mock email and acknowledge 
+	 * Send mock email and acknowledge
+	 * 
 	 * @throws InterruptedException
 	 * @throws EmailException
 	 * @throws AddressException
@@ -33,9 +35,9 @@ public class MockMailSender {
 		if (users != null) {
 			for (User user : users) {
 				mailSender.sendEmail(user.getEmail(), subject, body);
-				//wait for half a second
+				// wait for half a second
 				Thread.sleep(500);
-				//check if mail is received and acknowledge
+				// check if mail is received and acknowledge
 				Mailbox mailbox = Mailbox.get(user.getEmail());
 				if (mailbox.size() == 1) {
 					log.log(Level.INFO, "Message sent to " + user.getFirstName());

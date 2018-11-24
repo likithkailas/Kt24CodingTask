@@ -21,8 +21,7 @@ public class CSVReader {
 	private static final String SEMICOLON_DELIMITER = ";";
 
 	/**
-	 * @param fileName
-	 * To extract user data (Email, FirstName & LastName) 
+	 * @param fileName To extract user data (Email, FirstName & LastName)
 	 */
 	public static void loadUsersFromCsvFile(String fileName) {
 		String line = "";
@@ -39,7 +38,7 @@ public class CSVReader {
 					user.setLastName(valueList[2].replace("\"", ""));
 //					System.out.println("Email: " + valueList[0].replace("\"", "") + "  " + "FirstName: "
 //							+ valueList[1].replace("\"", "") + "  " + "LastName: " + valueList[2].replace("\"", ""));
-				users.add(user);
+					users.add(user);
 
 				}
 				iterator++;

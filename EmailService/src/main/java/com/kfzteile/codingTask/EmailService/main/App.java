@@ -3,6 +3,7 @@
  *
  */
 package com.kfzteile.codingTask.EmailService.main;
+
 import java.io.File;
 import java.util.List;
 import java.util.Scanner;
@@ -22,13 +23,13 @@ public class App {
 	 * @throws AddressException
 	 */
 	public static void main(String[] args) throws InterruptedException, EmailException, AddressException {
-		//take input from the user console (absolute file path of csv file)
+		// take input from the user console (absolute file path of csv file)
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter a CSV File Absolute Path : ");
 		String filePath = scan.nextLine();
 		// append file extension to absolute path if ".csv" is missed
-		if(!filePath.contains(".csv")) {
-			filePath=filePath.concat(".csv");
+		if (!filePath.contains(".csv")) {
+			filePath = filePath.concat(".csv");
 		}
 		// store users extracted from CSV file
 		CSVReader.loadUsersFromCsvFile(filePath);

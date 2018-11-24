@@ -1,7 +1,8 @@
 /**
- * @author likit
+ * @author Likith
+ * 
  */
-package com.kfzteile.codingTask.EmailService;
+package com.kfzteile.codingTask.EmailService.service;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -12,16 +13,21 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kfzteile.codingTask.EmailService.user.User;
+
 public class CSVReader {
 	static List<User> users = new ArrayList<User>();
 
 	private static final String SEMICOLON_DELIMITER = ";";
 
+	/**
+	 * @param fileName
+	 * To extract user data (Email, FirstName & LastName) 
+	 */
 	public static void loadUsersFromCsvFile(String fileName) {
 		String line = "";
 		BufferedReader fileReader = null;
-		int iterator = 0;// to skip first line of CSV since it contains headers1
-
+		int iterator = 0;// to skip first line of CSV since it contains headerss
 		try {
 			fileReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "UTF8"));
 			while ((line = fileReader.readLine()) != null) {
@@ -31,9 +37,9 @@ public class CSVReader {
 					user.setEmail(valueList[0].replace("\"", ""));
 					user.setFirstName(valueList[1].replace("\"", ""));
 					user.setLastName(valueList[2].replace("\"", ""));
-					System.out.println("Email: " + valueList[0].replace("\"", "") + "  " + "FirstName: "
-							+ valueList[1].replace("\"", "") + "  " + "LastName: " + valueList[2].replace("\"", ""));
-					users.add(user);
+//					System.out.println("Email: " + valueList[0].replace("\"", "") + "  " + "FirstName: "
+//							+ valueList[1].replace("\"", "") + "  " + "LastName: " + valueList[2].replace("\"", ""));
+				users.add(user);
 
 				}
 				iterator++;

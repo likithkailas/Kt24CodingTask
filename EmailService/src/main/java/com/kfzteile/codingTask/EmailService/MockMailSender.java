@@ -4,11 +4,9 @@
 package com.kfzteile.codingTask.EmailService;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.mail.Message;
 import javax.mail.internet.AddressException;
 
 import org.apache.commons.mail.EmailException;
@@ -28,10 +26,11 @@ public class MockMailSender {
 		if (users != null) {
 			for (User user : users) {
 				mailSender.sendMail(user.getEmail(), subject, body);
-				TimeUnit.SECONDS.sleep(1/2);
+				Thread.sleep(500);
 				Mailbox mailbox = Mailbox.get(user.getEmail());
-				if(mailbox.size()==1) {
-;				log.log(Level.INFO, "Messgae sent to " + user.getFirstName());
+				if (mailbox.size() == 1) {
+					log.log(Level.INFO, "Message sent to " + user.getFirstName());
+					mailbox.clear();
 				}
 			}
 		}

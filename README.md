@@ -13,11 +13,11 @@ java -jar ${ABOLUTEPATH_OF_APPLICATION}
     C:\Users\likith\Desktop\sampleData      
 
 -------------------------------------------------------------------     
-**Implementation Details**    
+**Implementation Details:**    
 1. CSVReadeClass: This class extracts the data from th csv file.    
-  > splits the line with regex(;) and replace " with empty space    
-  > stores the extracted users data (mail, FirstName and LastName)   
-  > reader csv file format with UTF-8 encoding    
+  - splits the line with regex(;) and replace " with empty space    
+  - stores the extracted users data (mail, FirstName and LastName)   
+  - reader csv file format with UTF-8 encoding    
 2. User.Java : Data model containing user data    
 3. MailSenderService: creates a mock session (testData) and sends mock email using MockMail API(Mime message)    
 4. Mock Mail Sender: sends mock email o every user after every half a second and acknowledges the user, if email received   

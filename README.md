@@ -1,4 +1,6 @@
-# Kt24CodingTask  : EMAIL SENDING SERVICE APPLICATION
+# Kt24CodingTask   
+
+**EMAIL SENDING SERVICE APPLICATION**   
 
 **To Generate the app(eecutable jar): Enter the below command in the pom.xml folder location**     
 maven clean compile install
